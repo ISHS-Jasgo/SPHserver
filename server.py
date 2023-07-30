@@ -32,5 +32,8 @@ async def sph(placeNM: str):
     size = sp.getPlaceSize(placeNM)
     width = int(np.sqrt(size))
     height = int(np.sqrt(size))
-    return SPH.SPH(ppl_count, width, height)
+    if size == 0:
+        return {"force": 0}
+    else:
+        return SPH.SPH(ppl_count, width, height)
 
